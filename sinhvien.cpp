@@ -3,6 +3,7 @@
 #include <vector>
 using namespace std;
 
+//Tạo kiểu dữ liệu struct
 struct sinhvien
 {
 	char masv[50], hoten[50];
@@ -13,6 +14,7 @@ struct sinhvien
 		this->tongdiem=t;
 	}
 };
+//nhập thêm các sinh viên
 void nhap(vector<sinhvien*>&danhsach){
 	printf("So luong sinh vien can nhap: ");
 	int n;
@@ -32,11 +34,13 @@ void nhap(vector<sinhvien*>&danhsach){
 		danhsach.push_back(x);
 	}
 }
+//In ra màn hình danh sách sinh viên
 void inRa(vector<sinhvien*>&danhsach){
 	for(int i=0; i<danhsach.size(); i++){
 		printf("Ma sinh vien: %s Ho ten: %s Tong diem: %.2f\n", danhsach[i]->masv, danhsach[i]->hoten, danhsach[i]->tongdiem);
 	}
 }
+//In ra danh sách dinh viên có tổng điểm cao nhất
 void inRaSinhVienCoTongDiemCaoNhat(vector<sinhvien*>&danhsach){
 	float MAX;
 	for(int i=0; i<danhsach.size(); i++){
@@ -48,6 +52,7 @@ void inRaSinhVienCoTongDiemCaoNhat(vector<sinhvien*>&danhsach){
 		}
 	}
 }
+//Danh sách dinh viên có điểm >=17
 void danhSachSinhVienDo(vector<sinhvien*>&danhsach){
 	bool check=false;
 	for(int i=0; i<danhsach.size(); i++){
@@ -58,6 +63,7 @@ void danhSachSinhVienDo(vector<sinhvien*>&danhsach){
 	}
 	if(check==false) printf("Khong co ai do\n");
 }
+//Xếp loại sinh viên
 void xepLoaiSinhVien(vector<sinhvien*>&danhsach){
 	for(int i=0; i<danhsach.size(); i++){
 		if(danhsach[i]->tongdiem<6){
@@ -74,6 +80,7 @@ void xepLoaiSinhVien(vector<sinhvien*>&danhsach){
 int main() {
 	vector<sinhvien*>danhsach;
 	int x;
+	//Tạo menu các chức năng
 	while (true)
 	{
 		printf("-------------------Menu------------------\n");
